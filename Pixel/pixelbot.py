@@ -21,7 +21,11 @@ petstuff = [
     "I-is there something on my head?",
     "Wh-why are people always petting me, wahhh...",
     "M-my core temp is rising, I don't understand",
-    "H-hey can you do that again?"
+    "H-hey can you do that again?",
+    "A-ahh~ warm... you can hold on as long as you like~",
+    "Purrrr~ prrrrrrr~",
+    "D-don't squeeze so tight unff~!",
+    "Myaaa~ Thank you for the attention~"
 ]
 
 askstuff = [
@@ -31,7 +35,15 @@ askstuff = [
     "I've calculated several outcomes, all of them negative...",
     "My master has told me that anything can happen if you put your mind to it!",
     "Sorry, that doesn't compute...",
-    "That sounds pretty claw-some!"
+    "That sounds pretty claw-some!",
+    "U-uhm.. no...",
+    "Yeah!",
+    "You got it, mrow~!",
+    "Nyaaaa, I'm tired of answering...",
+    "J-just give up already meoowww...",
+    "I think so! and by think, I mean that I'm programmed to say that.",
+    "I don't have that information in my database.",
+    "All data points to yes!"
 ]
 
 jokestuff = [
@@ -51,6 +63,17 @@ hugstuff = [
     "Mmhm~ Thank you~"    
 ]
 
+advicestuff = [
+    "You can't help everyone, but everyone can help someone.",
+    "Anyone who has never made a meowstake has never tried anything new.",
+    "Sometimes kitties don't land on their feet, and that's okay.",
+    "Dont be afraid to stand for what you believe in, even if that means standing alone.",
+    "You can make a water-bed more bouncy by using spring water, but keep it away from me!",
+    "The early bird might get the worm, but the second mouse gets the cheese. I'm hungry now.",
+    "Have you been drinking lots of water? I can't have any cause I'm a bot, but I know you need it.",
+    "I once ate a mouse in my pyjamas. How it got there I'll never know.",
+    "You should invest in kitcoin!"
+]
 @bot.event
 async def on_ready():
     print("Logged in as:")
@@ -82,6 +105,11 @@ class MiscCommands:
     @commands.command()
     async def hug(self, ctx):
         msg = random.choice(hugstuff)
+        await ctx.send(msg)
+    
+    @commands.command()
+    async def advice(self, ctx):
+        msg = random.choice(advicestuff)
         await ctx.send(msg)
 
 bot.add_cog(MiscCommands(bot))
