@@ -1,3 +1,7 @@
+'''
+A bot created by a good friend
+Here for reference :)
+'''
 import discord
 from discord.ext import commands
 import asyncio
